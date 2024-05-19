@@ -1,0 +1,225 @@
+.about-child {
+    position: relative;
+    opacity: 0;
+    top: 30px;
+}
+
+@for $i from 0 through 3 {
+    .about-child:nth-child(#{$i + 1}) {
+        animation-name: floatIn;
+        animation-delay: (0.3 * $i) + s;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+    }
+}
+
+.about,
+.more-info {
+    display: block;
+    margin: 160px auto;
+    max-width: 866px;
+    padding: 0 25px;
+    text-align: center;
+
+    @media screen and (max-width: 900px) {
+        margin: 60px auto;
+    }
+}
+
+.about-me {
+    padding-top: 67px;
+    text-align: center;
+}
+
+.about {
+    &__img {
+        border-radius: 999px;
+        height: 207px;
+        margin-bottom: 28px;
+        width: 207px;
+
+        @media screen and (max-width: 900px) {
+            height: 160px;
+            width: 160px;
+        }
+
+        &--proj {
+            border-radius: unset;
+            height: unset;
+            width: unset;
+        }
+    }
+
+    &__header,
+    &__sub-header {
+        color: #CFCFCF;
+        display: inline;
+        font-size: 2.75rem;
+        font-weight: 200;
+        line-height: 3.68rem;
+        margin: 0;
+
+        em,
+        &--proj {
+            color: #ffffff;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        @media screen and (max-width: 900px) {
+            font-size: 2rem;
+            line-height: 2.68rem;
+        }
+
+        @media screen and (max-width: 600px) {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+    }
+
+    &__upper {
+        margin-bottom: 70px;
+
+        @media screen and (max-width: 900px) {
+            margin-bottom: 35px;
+        }
+
+        &--proj {
+            margin: 0 40px 0;
+
+            @media (max-width: 650px) {
+                margin: 0 26px 0;
+            }
+        }
+    }
+
+    &__hand,
+    &__flag {
+        height: 56px;
+        margin-left: 4px;
+        position: relative;
+        width: 56px;
+
+        @media screen and (max-width: 900px) {
+            height: 30px;
+            margin-left: 0;
+            width: 30px;
+        }
+
+        @media screen and (max-width: 600px) {
+            height: 25px;
+            margin-left: 2px;
+            width: 25px;
+        }
+    }
+
+    &__hand {
+        top: 10px;
+
+        @media screen and (max-width: 900px) {
+            top: 3px;
+        }
+
+        @media screen and (max-width: 600px) {
+            top: 2.5px;
+        }
+    }
+
+    &__flag {
+        top: 13px;
+
+        @media screen and (max-width: 900px) {
+            top: 4px;
+        }
+    }
+
+    &--proj {
+        background-position: 50% 50%;
+        background-size: cover;
+        margin: 67px 0 0;
+        max-width: unset;
+        padding: 160px 0;
+
+        @media (max-width: 900px) {
+            padding: 120px 0;
+        }
+
+        @media (max-width: 650px) {
+            padding: 90px 0;
+            margin: 67px 0 0;
+        }
+    }
+}
+
+.more-info {
+    display: inline-block;
+    margin: 0 auto 100px;
+    text-align: center;
+    text-decoration: none;
+
+    animation-name: fadeIn;
+    animation-delay: 1.9s;
+    animation-duration: 1.4s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+    @media screen and (max-width: 900px) {
+        margin: 0 auto 60px;
+    }
+
+    &--proj {
+        display: block;
+    }
+
+    &__text {
+        color: #00CF6E;
+        display: block;
+        font-size: 1.44rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+
+        @media screen and (max-width: 900px) {
+            font-size: 1.15rem;
+        }
+
+        @media screen and (max-width: 600px) {
+            font-size: 0.95rem;
+        }
+    }
+
+    .more-info-icon,
+    &__text {
+        position: relative;
+        top: 0;
+        transition: 0.3s ease-in-out;
+    }
+
+    .more-info-icon {
+        height: 33px;
+        width: 33px;
+
+        &__stroke {
+            stroke: #00cf6e;
+        }
+
+        @media screen and (max-width: 900px) {
+            height: 25px;
+            width: 25px;
+        }
+
+        @media screen and (max-width: 600px) {
+            height: 22px;
+            width: 22px;
+        }
+    }
+
+    &:hover {
+        .more-info__text {
+            top: 10px;
+        }
+
+        .more-info-icon {
+            top: 15px;
+        }
+    }
+}
