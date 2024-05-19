@@ -109,14 +109,14 @@ const GlobalScripts = () => {
             });
         };
 
-        // const certsAnimCallback = (entries, observer) => {
-        //     entries.forEach(entry => {
-        //         if (entry.isIntersecting) {
-        //             console.log("is intersecting");
-        //             animateCerts();
-        //         }
-        //     });
-        // };
+        const certsAnimCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    console.log("is intersecting");
+                    animateCerts();
+                }
+            });
+        };
 
         // const careerAnimCallback = (entries, observer) => {
         //     entries.forEach(entry => {
@@ -146,13 +146,13 @@ const GlobalScripts = () => {
         // };
 
         const skillObserver = new IntersectionObserver(cardsAnimCallback, skillsOpts);
-        // const certsObserver = new IntersectionObserver(certsAnimCallback, skillsOpts);
+        const certsObserver = new IntersectionObserver(certsAnimCallback, skillsOpts);
         // const careerObserver = new IntersectionObserver(careerAnimCallback, careerOpts);
         // const workObserver = new IntersectionObserver(workAnimCallback, careerOpts);
         // const socialObserver = new IntersectionObserver(socialAnimCallback, skillsOpts);
 
         skillObserver.observe(skillCards);
-        // certsObserver.observe(certsGrid);
+        certsObserver.observe(certsGrid);
         // careerObserver.observe(careerGrid);
         // workObserver.observe(workGrid);
         // socialObserver.observe(socialGrid);
@@ -163,13 +163,13 @@ const GlobalScripts = () => {
             }
         }
 
-        // function animateCerts() {
-        //     console.log("animateCerts function running");
-        //     for (let i = 0; i < allCerts.length; i++) {
-        //         allCerts[i].classList.add("certif--animate");
-        //         console.log("looping and adding classes");
-        //     }
-        // }
+        function animateCerts() {
+            console.log("animateCerts function running");
+            for (let i = 0; i < allCerts.length; i++) {
+                allCerts[i].classList.add("certif--animate");
+                console.log("looping and adding classes");
+            }
+        }
 
         // function animateCareerGrid() {
         //     for (let i = 0; i < careerGrid.children.length; i++) {

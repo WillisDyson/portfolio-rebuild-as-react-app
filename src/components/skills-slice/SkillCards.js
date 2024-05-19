@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import SkillName from "./SkillName";
 import SkillDesc from "./SkillDesc";
 import SkillTiles from "./SkillTiles";
