@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ImgLocationContext } from '../../App'; // Adjust the path according to your project structure
+import { ImgLocationContext } from '../../App';
 
 const image = {
     filename: 'willis.png',

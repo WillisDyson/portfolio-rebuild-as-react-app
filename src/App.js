@@ -1,6 +1,6 @@
 import React, { createContext } from 'react';
 import GlobalScripts from './globals/GlobalScripts';
-import { Navbar, HeroSlice, SkillsSlice } from './components';
+import { Navbar, HeroSlice, SkillsSlice, CertifsSlice } from './components';
 import './App.css';
 
 const ImgLocationContext = createContext();
@@ -13,6 +13,7 @@ function App() {
         <Navbar />
         <HeroSlice />
         <SkillsSlice />
+        <CertifsSlice />
       </ImgLocationContext.Provider>
       <GlobalScripts />
     </div>

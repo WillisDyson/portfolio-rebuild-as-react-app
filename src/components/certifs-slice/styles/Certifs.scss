@@ -1,0 +1,129 @@
+@for $i from 0 through 8 {
+    .certif:nth-child(#{$i + 1}) {
+        animation-delay: (0.25 * $i) + s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+}
+
+.certifs {
+    background-color: #191919;
+    text-align: center;
+    padding: 85px 25px 100px;
+
+
+
+    @media (max-width: 650px) {
+        padding: 50px 25px 60px;
+    }
+
+    &__inner-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 600px;
+    }
+}
+
+.certif {
+    align-items: center;
+    background-color: #2f2f2f;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    margin: 10px;
+    opacity: 0;
+    padding: 14px 18px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    transition: 0.3s;
+    width: 100%;
+
+    &--animate {
+        animation-name: fadeIn;
+    }
+
+    &:hover {
+        top: -8px;
+    }
+
+    &--wip {
+        &:hover {
+            cursor: not-allowed;
+            top: 0;
+        }
+    }
+
+    &__highlight {
+        align-self: start;
+        background-color: #00CF6E;
+        border-radius: 999px;
+        height: 10px;
+        flex-shrink: 0;
+        margin-right: 10px;
+        position: relative;
+        top: 12.5px;
+        width: 10px;
+
+        &--wip {
+            background-color: #ffee00;
+        }
+
+        @media (max-width: 650px) {
+            top: 10px;
+        }
+    }
+
+    &__name {
+        align-items: center;
+        display: flex;
+        text-align: left;
+    }
+
+    &__course {
+        display: inline;
+        font-size: 1.5rem;
+        margin: 0 7.5px 0 0;
+        text-align: left;
+
+        @media (max-width: 650px) {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__provider {
+        color: #aeaeae;
+        display: inline;
+        font-size: 1.5rem;
+
+        @media (max-width: 650px) {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__date {
+        color: #aeaeae;
+        font-size: 1.15rem;
+        margin-left: 20px;
+        text-align: left;
+
+        @media (max-width: 650px) {
+            font-size: 0.85rem;
+        }
+    }
+
+    &__logo {
+        align-items: center;
+        display: flex;
+        margin-left: auto;
+
+        img {
+            flex-shrink: 0;
+            max-width: 100%;
+            min-width: 54px;
+        }
+    }
+}
