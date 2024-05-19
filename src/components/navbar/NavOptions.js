@@ -1,5 +1,5 @@
 const navLinks = [
-    { label: 'About', href: '#about' },
+    { label: 'About', href: '#about', class: 'nav__item--active' },
     { label: 'Skills', href: '#skills' },
     { label: 'Certifications', href: '#certifs' },
     { label: 'Career & Education', href: '#career' },
