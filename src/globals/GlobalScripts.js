@@ -30,6 +30,43 @@ const GlobalScripts = () => {
         let allMoreInfoBtns = document.querySelectorAll(".career-info__more-info");
         let allMoreInfoText = document.querySelectorAll(".career-info__more-info-text");
 
+        for (let i = 0; i < allMoreInfoBtns.length; i++) {
+            allMoreInfoBtns[i].addEventListener("click", handleMoreInfoClick);
+        }
+
+        function initDropdowns() {
+            for (let i = 0; i < allMoreInfoBtns.length; i++) {
+                allMoreInfoText[i].classList.remove("career-info__more-info-text--hidden");
+                allMoreInfoText[i].style.maxHeight = "unset";
+                let thisElemHeight = allMoreInfoText[i].offsetHeight;
+                allMoreInfoText[i].setAttribute("data-max-height", thisElemHeight);
+                let newMaxHeight = allMoreInfoText[i].getAttribute("data-max-height");
+                allMoreInfoText[i].style.maxHeight = newMaxHeight + "px";
+                allMoreInfoText[i].classList.add("career-info__more-info-text--hidden");
+            }
+            console.log("Dropdowns initted");
+        }
+
+        let previousWidth = window.innerWidth;
+
+        document.addEventListener("DOMContentLoaded", initDropdowns);
+        window.addEventListener('resize', () => {
+            const currentWidth = window.innerWidth;
+
+            /* Accordion max-heights will only be recalculated if thw width of the page is resized, not the height. */
+            if (currentWidth !== previousWidth) {
+                initDropdowns();
+                console.log("Dropdowns initted through window resize");
+            }
+            previousWidth = currentWidth;
+        });
+
+        function handleMoreInfoClick() {
+            console.log("More info clicked");
+            this.parentElement.querySelector(".career-info__more-info-text").classList.toggle("career-info__more-info-text--hidden");
+            console.log("Class --hidden toggled on/off once");
+        }
+
         document.addEventListener("scroll", (e) => {
             toggleNav();
         });
@@ -118,16 +155,16 @@ const GlobalScripts = () => {
             });
         };
 
-        // const careerAnimCallback = (entries, observer) => {
-        //     entries.forEach(entry => {
-        //         if (entry.isIntersecting) {
-        //             setTimeout(() => {
-        //                 animateCareerGrid();
-        //             }
-        //                 , 200);
-        //         }
-        //     });
-        // };
+        const careerAnimCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        animateCareerGrid();
+                    }
+                        , 200);
+                }
+            });
+        };
 
         // const workAnimCallback = (entries, observer) => {
         //     entries.forEach(entry => {
@@ -147,13 +184,13 @@ const GlobalScripts = () => {
 
         const skillObserver = new IntersectionObserver(cardsAnimCallback, skillsOpts);
         const certsObserver = new IntersectionObserver(certsAnimCallback, skillsOpts);
-        // const careerObserver = new IntersectionObserver(careerAnimCallback, careerOpts);
+        const careerObserver = new IntersectionObserver(careerAnimCallback, careerOpts);
         // const workObserver = new IntersectionObserver(workAnimCallback, careerOpts);
         // const socialObserver = new IntersectionObserver(socialAnimCallback, skillsOpts);
 
         skillObserver.observe(skillCards);
         certsObserver.observe(certsGrid);
-        // careerObserver.observe(careerGrid);
+        careerObserver.observe(careerGrid);
         // workObserver.observe(workGrid);
         // socialObserver.observe(socialGrid);
 
@@ -171,11 +208,11 @@ const GlobalScripts = () => {
             }
         }
 
-        // function animateCareerGrid() {
-        //     for (let i = 0; i < careerGrid.children.length; i++) {
-        //         careerGrid.children[i].classList.add("career-grid--animate");
-        //     }
-        // }
+        function animateCareerGrid() {
+            for (let i = 0; i < careerGrid.children.length; i++) {
+                careerGrid.children[i].classList.add("career-grid--animate");
+            }
+        }
 
         // function animateWorkGrid() {
         //     for (let i = 0; i < allWorkItems.length; i++) {
