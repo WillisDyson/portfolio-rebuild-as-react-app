@@ -9,13 +9,12 @@ const ImgLocationContext = createContext();
 function App() {
   return (
     <div id="app">
-      <GlobalScripts />
       <ImgLocationContext.Provider value="images/">
         <Navbar />
         <HeroSlice />
         <SkillsSlice />
       </ImgLocationContext.Provider>
-
+      <GlobalScripts />
     </div>
   );
 }
