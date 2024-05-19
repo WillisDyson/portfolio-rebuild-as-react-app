@@ -1,7 +1,7 @@
-import React from "react";
 import NavOptions from "./NavOptions";
+import './styles/Navbar.css';
 
-const Navbar = () => {
+let Navbar = () => {
 
     return (
         <nav className="nav hidden">
@@ -9,11 +9,11 @@ const Navbar = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="23.84" height="16.894" viewBox="0 0 23.84 16.894">
                     <g id="Icon_feather-menu" data-name="Icon feather-menu" transform="translate(-3 -7.5)">
                         <path id="Path_12" data-name="Path 12" d="M4.5,18H25.34" transform="translate(0 -2.053)" fill="none"
-                            stroke="#00cf6e" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                            stroke="#00cf6e" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                         <path id="Path_13" data-name="Path 13" d="M4.5,9H25.34" fill="none" stroke="#00cf6e"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                         <path id="Path_14" data-name="Path 14" d="M4.5,27H25.34" transform="translate(0 -4.106)" fill="none"
-                            stroke="#00cf6e" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                            stroke="#00cf6e" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                     </g>
                 </svg>
             </div>
@@ -23,10 +23,10 @@ const Navbar = () => {
                         <g id="Icon_feather-menu" data-name="Icon feather-menu" transform="translate(-5.431 -6.457)">
                             <path id="Path_12" data-name="Path 12" d="M4.5,18H25.34"
                                 transform="translate(-8.358 13.769) rotate(-45)" fill="none" stroke="#00cf6e"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                                strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                             <path id="Path_14" data-name="Path 14" d="M4.5,27H25.34"
                                 transform="translate(23.462 -13.695) rotate(45)" fill="none" stroke="#00cf6e"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                                strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                         </g>
                     </svg>
 
